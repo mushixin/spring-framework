@@ -21,10 +21,13 @@ package com;
  * @author Lazy Hu
  */
 
-public class MyTestBean {
- 
+public class MyTestBean2 {
+
+	private MyTestBean myTestBean;
+
 	private String testStr = "testStr";
- 
+
+
 	public String getTestStr() {
 		return this.testStr;
 	}
@@ -33,4 +36,11 @@ public class MyTestBean {
 		this.testStr = testStr;
 	}
 
+	public MyTestBean getMyTestBean() {
+		return myTestBean;
+	}
+
+	public void setMyTestBean(MyTestBean myTestBean) {
+		this.myTestBean = myTestBean;
+	}
 }
