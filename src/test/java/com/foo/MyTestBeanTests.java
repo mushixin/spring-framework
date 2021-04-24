@@ -24,14 +24,17 @@ class MyTestBeanTests {
 		bean.setTestStr("newTestStr");
 		System.out.println(bean.getTestStr());
 
+		XmlBeanFactory factory =(XmlBeanFactory) bf.getBean("&myTestBean");
+		System.out.println(factory.containsBean("myTestBean"));
 
-		MyTestBean2 bean2 =(MyTestBean2) bf.getBean("myTestBean2");
-		MyTestBean testBean1= bean2.getMyTestBean();
-		System.out.println(testBean1.getTestStr());
-
-		bean.setTestStr("newTestStr lalala");
-
-		System.out.println(testBean1.getTestStr());
+		//是单例的，是会互相影响的。
+//		MyTestBean2 bean2 =(MyTestBean2) bf.getBean("myTestBean2");
+//		MyTestBean testBean1= bean2.getMyTestBean();
+//		System.out.println(testBean1.getTestStr());
+//
+//		bean.setTestStr("newTestStr lalala");
+//
+//		System.out.println(testBean1.getTestStr());
 
 
 //		for(int i = 0 ; i< 10 ;i ++){
