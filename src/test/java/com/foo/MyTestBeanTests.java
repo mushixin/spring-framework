@@ -4,6 +4,7 @@ import com.MyTestBean;
 import com.MyTestBean2;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.core.io.ClassPathResource;
 
@@ -19,13 +20,18 @@ class MyTestBeanTests {
 	public static void main(String[] args) {
 
 
-		BeanFactory bf = new XmlBeanFactory(new ClassPathResource("resource.xml"));
+		XmlBeanFactory bf = new XmlBeanFactory(new ClassPathResource("resource.xml"));
+//		XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(bf);
+//		reader.loadBeanDefinitions(new ClassPathResource("resource.xml"));
+
 		MyTestBean bean =(MyTestBean) bf.getBean("myTestBean");
 		bean.setTestStr("newTestStr");
 		System.out.println(bean.getTestStr());
 
-		XmlBeanFactory factory =(XmlBeanFactory) bf.getBean("&myTestBean");
-		System.out.println(factory.containsBean("myTestBean"));
+
+
+//		XmlBeanFactory factory =(XmlBeanFactory) bf.getBean("&myTestBean");
+//		System.out.println(factory.containsBean("myTestBean"));
 
 		//是单例的，是会互相影响的。
 //		MyTestBean2 bean2 =(MyTestBean2) bf.getBean("myTestBean2");
