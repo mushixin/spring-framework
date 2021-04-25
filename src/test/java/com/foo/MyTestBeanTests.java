@@ -24,7 +24,7 @@ class MyTestBeanTests {
 //		XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(bf);
 //		reader.loadBeanDefinitions(new ClassPathResource("resource.xml"));
 
-		MyTestBean bean =(MyTestBean) bf.getBean("myTestBean");
+		MyTestBean bean = (MyTestBean) bf.getBean("myTestBean");
 		bean.setTestStr("newTestStr");
 		System.out.println(bean.getTestStr());
 
