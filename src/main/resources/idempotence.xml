@@ -11,6 +11,11 @@
 
    
     <bean id="idempotencePointcut" class="org.springframework.aop.support.JdkRegexpMethodPointcut" scope="prototype">
+        <property name="patterns">
+            <list>
+                <value>*</value>
+            </list>
+        </property>
     </bean>
 
     <aop:config>
